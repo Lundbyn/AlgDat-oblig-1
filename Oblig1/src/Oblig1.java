@@ -6,7 +6,8 @@ public class Oblig1 {
 
     public static void main(String[] args) {
         System.out.println("Hello world");
-
+        int[] a = {1,2,2,2,3,3,4,4,4,4,4};
+        System.out.println(antallUlikeSortert(a));
     }
 
     //Oppgave 1)
@@ -41,9 +42,7 @@ public class Oblig1 {
         }
         for (int i = 1; i < a.length; ++i) {
             if(a[i] < a[i-1]) {
-                int temp = a[i];
-                a[i] = a[i-1];
-                a[i-1] = temp;
+                bytt(a, i, i-1);
             }
         }
         System.out.println();
@@ -52,12 +51,10 @@ public class Oblig1 {
 
     //Sjekker hvor mange ombyttinger som blir utført
     public static int ombyttinger(int[] a) {
-        int antOmbyttinger = 0;
+        int antOmbyttinger = 1;
         for (int i = 1; i < a.length; ++i) {
             if(a[i] < a[i-1]) {
-                int temp = a[i];
-                a[i] = a[i-1];
-                a[i-1] = temp;
+                bytt(a, i, i-1);
                 antOmbyttinger++;
             }
         }
@@ -65,7 +62,30 @@ public class Oblig1 {
     }
 
 
-    //Skriver ut en array [FJERNES]
+    //Oppgave 2
+    public static int antallUlikeSortert(int[] a) {
+        if(a.length == 0) {
+            return 0;       //Returnerer 0 dersom arrayen har lengde på 0.
+        }
+        for(int i = 1; i < a.length; ++i) {
+            if (a[i] < a[i-1]) {
+                throw new IllegalStateException("Arrayet er ikke sortert");    //sjekker at arrayen er sortert i stigende rekkefølge
+            }
+        }
+        int antUlike = 1;
+        for(int j = 1; j < a.length; ++j) {
+            if(a[j] != a[j-1]) {
+                antUlike++;
+            }
+        }
+        return antUlike;
+    }
+
+
+
+    //Hjelpefunksjoner hentet fra ukesopppgavene
+
+    //Skriver ut en array
     public static void skriv(int[] a) {
         for(int i : a) {
             System.out.print(i + ", ");
