@@ -1,13 +1,11 @@
-import java.util.Arrays;
-import java.util.NoSuchElementException;
-import java.util.Random;
+import java.util.*;
 
 public class Oblig1 {
 
     public static void main(String[] args) {
         System.out.println("Hello world");
-        int[] a = {1,2,2,2,3,3,4,4,4,4,4};
-        System.out.println(antallUlikeSortert(a));
+        int[] a = {5, 3, 7, 4, 3, 5, 7, 8, 6, 7};
+        System.out.println(antallUlikeUsortert(a));
     }
 
     //Oppgave 1)
@@ -73,15 +71,29 @@ public class Oblig1 {
             }
         }
         int antUlike = 1;
-        for(int j = 1; j < a.length; ++j) {
-            if(a[j] != a[j-1]) {
+        for(int i = 1; i < a.length; ++i) {
+            if(a[i] != a[i-1]) {
                 antUlike++;
             }
         }
         return antUlike;
     }
 
-
+    public static int antallUlikeUsortert(int[] a) { //Funker også dersom arrayet er sortert
+        int antUlike = 0;
+        for(int i = 0; i < a.length; ++i) {
+            boolean nyVerdi = true;
+            for (int j = 0; j < i; ++j) {
+                if(a[i] == a[j]) {
+                    nyVerdi = false;
+                }
+            }
+            if(nyVerdi) {
+                antUlike++;
+            }
+        }
+        return antUlike;
+    }
 
     //Hjelpefunksjoner hentet fra ukesopppgavene
 
