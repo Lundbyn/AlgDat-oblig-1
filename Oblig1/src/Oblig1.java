@@ -4,8 +4,8 @@ public class Oblig1 {
 
     public static void main(String[] args) {
         System.out.println("Hello world");
-        int[] a = {5, 3, 7, 4, 3, 5, 7, 8, 6, 7};
-        System.out.println(antallUlikeUsortert(a));
+        char[] a = {'a', 'b', 'c', 'd', 'e', 'f'};
+        rotasjon(a);
     }
 
     //Oppgave 1)
@@ -79,6 +79,7 @@ public class Oblig1 {
         return antUlike;
     }
 
+    //Oppgave 3
     public static int antallUlikeUsortert(int[] a) { //Funker også dersom arrayet er sortert
         int antUlike = 0;
         for(int i = 0; i < a.length; ++i) {
@@ -94,6 +95,25 @@ public class Oblig1 {
         }
         return antUlike;
     }
+
+    //Oppgave 4
+    public static void delsortering(int[] a) {
+
+    }
+
+    //Oppgave 5
+    public static void rotasjon(char[] a) {
+        char last = a[a.length - 1];
+        for (int i = a.length - 1; i > 0; --i) {
+            a[i] = a[i-1];
+        }
+        a[0] = last;
+    }
+
+    
+
+
+
 
     //Hjelpefunksjoner hentet fra ukesopppgavene
 
