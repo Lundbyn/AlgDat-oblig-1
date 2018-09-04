@@ -4,8 +4,10 @@ public class Oblig1 {
 
     public static void main(String[] args) {
         System.out.println("Hello world");
-        char[] a = {'a', 'b', 'c', 'd', 'e', 'f'};
+        char[] a = {'a'};
+        System.out.println(Arrays.toString(a));
         rotasjon(a);
+
     }
 
     //Oppgave 1)
@@ -87,6 +89,7 @@ public class Oblig1 {
             for (int j = 0; j < i; ++j) {
                 if(a[i] == a[j]) {
                     nyVerdi = false;
+                    break;      //Break for å ikke iterere videre dersom man finner en lik verdi.
                 }
             }
             if(nyVerdi) {
@@ -101,7 +104,7 @@ public class Oblig1 {
 
     }
 
-    //Oppgave 5
+    //Oppgave 5 (Funker ikke med 0 verdier)
     public static void rotasjon(char[] a) {
         char last = a[a.length - 1];
         for (int i = a.length - 1; i > 0; --i) {
@@ -110,9 +113,17 @@ public class Oblig1 {
         a[0] = last;
     }
 
-    
-
-
+    //Oppgave 6 (Kan ikke kjøre med negativ k)
+    public static void rotasjon(char[] a, int k) {
+        for(int j = k; j > 0; j--) {
+            char last = a[a.length - 1];
+            for (int i = a.length - 1; i > 0; --i) {
+                a[i] = a[i - 1];
+            }
+            a[0] = last;
+        }
+        System.out.println(Arrays.toString(a));
+    }
 
 
     //Hjelpefunksjoner hentet fra ukesopppgavene
