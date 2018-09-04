@@ -4,9 +4,10 @@ public class Oblig1 {
 
     public static void main(String[] args) {
         System.out.println("Hello world");
-        char[] a = {'a'};
+        int[] a = {5,2,4,1,3, 6};
         System.out.println(Arrays.toString(a));
-        rotasjon(a);
+        delsortering(a);
+        System.out.println(Arrays.toString(a));
 
     }
 
@@ -101,7 +102,7 @@ public class Oblig1 {
 
     //Oppgave 4
     public static void delsortering(int[] a) {
-
+        
     }
 
     //Oppgave 5 (Funker ikke med 0 verdier)
