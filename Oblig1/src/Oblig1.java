@@ -4,10 +4,7 @@ public class Oblig1 {
 
     public static void main(String[] args) {
         System.out.println("Hello world");
-        int[] a = {5,2,4,1,3, 6};
-        System.out.println(Arrays.toString(a));
-        delsortering(a);
-        System.out.println(Arrays.toString(a));
+        System.out.println(flett("ADGJ", "BEHK", "CFIL FUCK", "OMEGALUL", "55555555555555555555555555555555"));
 
     }
 
@@ -105,29 +102,72 @@ public class Oblig1 {
         
     }
 
-    //Oppgave 5 (Funker ikke med 0 verdier)
+    //Oppgave 5
     public static void rotasjon(char[] a) {
-        char last = a[a.length - 1];
         for (int i = a.length - 1; i > 0; --i) {
-            a[i] = a[i-1];
+            bytt(a, i, i-1);
         }
-        a[0] = last;
     }
 
-    //Oppgave 6 (Kan ikke kjøre med negativ k)
+    //Oppgave 6
     public static void rotasjon(char[] a, int k) {
-        for(int j = k; j > 0; j--) {
-            char last = a[a.length - 1];
-            for (int i = a.length - 1; i > 0; --i) {
-                a[i] = a[i - 1];
+        for (int i = 0; i < Math.abs(k); i++) {
+            if(k > 0) {
+                for (int j = a.length - 1; j > 0; --j) {
+                    bytt(a, j, j - 1);
+                }
             }
-            a[0] = last;
+            else {
+                for (int j = 0; j < a.length - 1; ++j) {
+                    bytt(a, j, j+1);
+                }
+            }
         }
-        System.out.println(Arrays.toString(a));
+    }
+
+    //Oppgave 7a
+    public static String flett(String s, String t) {
+        String flettet = "";
+        int i = 0;
+        while (i < s.length() && i < t.length()) {
+            flettet += s.charAt(i);
+            flettet += t.charAt(i);
+            i++;
+        }
+        while (i < s.length()) {
+            flettet += s.charAt(i++);
+        }
+        while (i < t.length()) {
+            flettet += t.charAt(i++);
+        }
+        return flettet;
+    }
+
+    //Oppgave 7b
+    public static String flett(String... s) {
+        int max = s[0].length();
+        for(int i = 1; i < s.length; i++) {         //Finner lengden på lengste String
+            if(s[i].length() > s[i-1].length()) {
+                max = s[i].length();
+            }
+        }
+
+        String flettet = "";
+        for (int i = 0; i < max; i++) {             //itererer gjennom s like mange ganger som lengde på lengste String
+            for(int j = 0; j < s.length; j++) {
+                try {
+                    flettet += s[j].charAt(i);      //Legger til tegn nr i fra hver String i den nye Stringen "flettet"
+                }
+                catch (IndexOutOfBoundsException e) {   //Dersom Stringen ikke har flere tegn går den til neste String
+                    continue;
+                }
+            }
+        }
+        return flettet;
     }
 
 
-    //Hjelpefunksjoner hentet fra ukesopppgavene
+    //Hjelpefunksjoner
 
     //Skriver ut en array
     public static void skriv(int[] a) {
@@ -153,10 +193,18 @@ public class Oblig1 {
         return a;                        // permutasjonen returneres
     }
 
-    //Bytter plass på 2 elementer i et array
+    //Bytter plass på 2 integer elementer i et array
     public static void bytt(int[] a, int i, int j)
     {
         int temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+
+
+    public static void bytt(char[] a, int i, int j)
+    {
+        char temp = a[i];
         a[i] = a[j];
         a[j] = temp;
     }
