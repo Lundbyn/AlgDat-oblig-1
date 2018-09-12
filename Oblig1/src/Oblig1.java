@@ -3,32 +3,26 @@ import java.util.*;
 public class Oblig1 {
 
     public static void main(String[] args) {
-        System.out.println("Hello world");
-        int[] a = randPerm(5);
+        char[] a = {'a', 'b', 'c', 'd'};
         System.out.println(Arrays.toString(a));
-        indekssrtering(a);
+        rotasjon(a,10);
+        System.out.println(Arrays.toString(a));
     }
 
     //Oppgave 1)
 
     /*
     Teorisporsmaal:
-
    - Hvor mange sammenligninger (som funksjon av n) blir det for en tabell med n verdier.
    Funksjonen iterer gjennom arrayen en gang, hvor den kjorer en sammeligning per iterasjon.
    Siden for-loopen starter paa i = 1 blir antall sammenligninger = n - 1.
-
-
    - Naar blir det flest ombyttinger?
    Det blir flest ombyttinger dersom det storste tallet i arrayen er paa den posisjon 0.
-
    - Naar blir det faerrest?
    Det blir faerrest ombyttinger dersom det storste tallet i arrayen er paa siste posisjon (array.length - 1).
-
    - Hvor mange blir det i gjennomsnitt?
     Ved å bruke ombyttinger-fuksjonen fant jeg at når man bruker et stort tall (big O) gjør den nesten n ombyttinger
     Vi kan derfor si at gjennomsnittet er O(n).
-
     - Kan du på grunnlag av dette si om metoden maks er bedre (eller dårligere) enn de maks-metodene vi har sett på tidligere?
     Begge har en big O notation på O(n), så de er ca like raske i snitt. Denne maks funskjonen har flere operasjoner inne i
     if statementet enn de gamle, derfor er denne hakket dårligere enn de andre maks-fuksjonene.
@@ -44,13 +38,12 @@ public class Oblig1 {
                 bytt(a, i, i-1);
             }
         }
-        System.out.println();
         return a[a.length-1];
     }
 
     //Sjekker hvor mange ombyttinger som blir utført
     public static int ombyttinger(int[] a) {
-        int antOmbyttinger = 1;
+        int antOmbyttinger = 0;
         for (int i = 1; i < a.length; ++i) {
             if(a[i] < a[i-1]) {
                 bytt(a, i, i-1);
@@ -100,50 +93,160 @@ public class Oblig1 {
 
     //Oppgave 4
     public static void delsortering(int[] a) {
-        for (int i = a.length; i > 1; i--)
+
+    }
+
+    private static void kvikksortering0(int[] a, int v, int h)  // en privat metode
+    {
+        if (v >= h) return;  // a[v:h] er tomt eller har maks ett element
+        int k = sParter0(a, v, h, (v + h)/2);  // bruker midtverdien
+        kvikksortering0(a, v, k - 1);     // sorterer intervallet a[v:k-1]
+        kvikksortering0(a, k + 1, h);     // sorterer intervallet a[k+1:h]
+    }
+
+    private static int sParter0(int[] a, int v, int h, int indeks)
+    {
+        bytt(a, indeks, h);           // skilleverdi a[indeks] flyttes bakerst
+        int pos = parter0(a, v, h - 1, a[h]);  // partisjonerer a[v:h − 1]
+        bytt(a, pos, h);              // bytter for å få skilleverdien på rett plass
+        return pos;                   // returnerer posisjonen til skilleverdien
+    }
+
+    private static int parter0(int[] a, int v, int h, int skilleverdi)
+    {
+        while (true)                                  // stopper når v > h
         {
-            for (int j = 1; j < i; j++)
-            {
-                if (a[j - 1] > a[j])  {
-                    bytt(a, j - 1, j);
-                }
-                if(a[j-1] % 2 == 0 && a[j] % 2 != 0) {
-                    bytt(a, j - 1, j);
-                }
-            }
+            while (v <= h && a[v] < skilleverdi) v++;   // h er stoppverdi for v
+            while (v <= h && a[h] >= skilleverdi) h--;  // v er stoppverdi for h
+
+            if (v < h) bytt(a,v++,h--);                 // bytter om a[v] og a[h]
+            else  return v;  // a[v] er nåden første som ikke er mindre enn skilleverdi
         }
     }
 
-    //Oppgave 5 (Funker ikke med 0 verdier)
+    //Oppgave 5
     public static void rotasjon(char[] a) {
-        char last = 'a';
-        for (int i = a.length; i > 1; --i) {
-            if(i == a.length) {
-                last = a[i-1];
-            }
-            a[i-1] = a[i-2];
-            if(i-2 == 0) {
-                a[0] = last;
-            }
+        for (int i = a.length - 1; i > 0; --i) {
+            bytt(a, i, i-1);
         }
-        System.out.println(Arrays.toString(a));
     }
 
-    //Oppgave 6 (Kan ikke kjøre med negativ k)
+    //Oppgave 6
     public static void rotasjon(char[] a, int k) {
-        for(int j = k; j > 0; j--) {
-            char last = a[a.length - 1];
-            for (int i = a.length - 1; i > 0; --i) {
-                a[i] = a[i - 1];
+        int indeks = k % a.length;
+        for(int i = 0; i > indeks; ++i) {
+            for(int j = 1; j < a.length; ++j) {
+                bytt(a,j,j-1);
             }
-            a[0] = last;
         }
-        System.out.println(Arrays.toString(a));
+    }
+
+    //Oppgave 7a
+    public static String flett(String s, String t) {
+        String flettet = "";
+        int i = 0;
+        while (i < s.length() && i < t.length()) {
+            flettet += s.charAt(i);
+            flettet += t.charAt(i);
+            i++;
+        }
+        while (i < s.length()) {
+            flettet += s.charAt(i++);
+        }
+        while (i < t.length()) {
+            flettet += t.charAt(i++);
+        }
+        return flettet;
+    }
+
+    //Oppgave 7b
+    public static String flett(String... s) {
+        int max = s[0].length();
+        for(int i = 1; i < s.length; i++) {         //Finner lengden på lengste String
+            if(s[i].length() > s[i-1].length()) {
+                max = s[i].length();
+            }
+        }
+
+        String flettet = "";
+        for (int i = 0; i < max; i++) {             //itererer gjennom s like mange ganger som lengde på lengste String
+            for(int j = 0; j < s.length; j++) {
+                try {
+                    flettet += s[j].charAt(i);      //Legger til tegn nr i fra hver String i den nye Stringen "flettet"
+                }
+                catch (IndexOutOfBoundsException e) {   //Dersom Stringen ikke har flere tegn går den til neste String
+                    continue;
+                }
+            }
+        }
+        return flettet;
+    }
+
+    //Oppgave 8
+    public static int[] indekssortering(int[] a) {
+        int[] indeks = new int[a.length];
+        for(int i = 0; i < indeks.length; ++i) {
+            indeks[i] = i;
+        }
+        for(int i = a.length - 1; i > 0; --i) {
+            for(int j = 0; j < i; ++j) {
+                if(a[indeks[i]] < a[indeks[j]]) {
+                    bytt(indeks, i, j);
+                }
+            }
+        }
+        return indeks;
+    }
+
+    //Oppgave 9
+    public static int[] tredjeMin(int[] a) {
+        if(a.length < 3) {
+            throw new NoSuchElementException("Arrayen må inneholde minst 3 elementer");
+        }
+        int[] startIndekser = indekssortering(kopierArray(a, 3));
+
+        int minstIndeks = startIndekser[0];
+        int nestMinstIndeks = startIndekser[1];
+        int tredjMinstIndeks = startIndekser[2];
+
+        int minst = a[minstIndeks];
+        int nestMinst = a[nestMinstIndeks];
+        int tredjMinst = a[tredjMinstIndeks];
+
+        for(int i = 3; i < a.length; i++) {
+            if(a[i] < tredjMinst) {
+                if(a[i] < nestMinst) {
+                    if(a[i] < minst) {
+                        tredjMinstIndeks = nestMinstIndeks;
+                        nestMinstIndeks = minstIndeks;
+                        minstIndeks = i;
+
+                        tredjMinst = nestMinst;
+                        nestMinst = minst;
+                        minst = a[i];
+                        continue;
+                    }
+                    tredjMinstIndeks = nestMinstIndeks;
+                    nestMinstIndeks = i;
+
+                    tredjMinst = nestMinst;
+                    nestMinst = a[i];
+                    continue;
+                }
+                tredjMinstIndeks = i;
+
+                tredjMinst = a[i];
+                continue;
+            }
+        }
+
+        int[] minsteVerdier = {minstIndeks, nestMinstIndeks, tredjMinstIndeks};
+
+        return minsteVerdier;
     }
 
 
-
-    //Hjelpefunksjoner hentet fra ukesopppgavene
+    //Hjelpefunksjoner
 
     //Skriver ut en array
     public static void skriv(int[] a) {
@@ -169,7 +272,7 @@ public class Oblig1 {
         return a;                        // permutasjonen returneres
     }
 
-    //Bytter plass på 2 elementer i et array
+    //Bytter plass på 2 integer elementer i et array
     public static void bytt(int[] a, int i, int j)
     {
         int temp = a[i];
@@ -177,18 +280,20 @@ public class Oblig1 {
         a[j] = temp;
     }
 
-    public static int[] indekssrtering(int[] a) {
-        int[] indecises = new int[a.length];
-        for (int i = 0; i < a.length; i++) indecises[i] = i;
-        for (int i = a.length-1; i > 0; i--) {
-            for (int j = 0; j < a.length; j++) {
-                if (a[indecises[j]] > a[i]) {
-                    System.out.println(a[indecises[j]]);
-                    System.out.println(a[i]);
-                }
-                System.out.println();
-            }
+
+    public static void bytt(char[] a, int i, int j)
+    {
+        char temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+
+    //Kopierer n elementer fra et array inn i et nytt array. Starter på indeks 0.
+    public static int[] kopierArray(int[] a, int n) {
+        int[] b = new int[n];
+        for(int i = 0; i < n; ++i) {
+            b[i] = a[i];
         }
-        return indecises;
+        return b;
     }
 }
