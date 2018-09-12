@@ -304,6 +304,28 @@ public class Oblig1 {
         return minsteVerdier;
     }
 
+    //Oppgave 10
+    public static boolean inneholdt(String a, String b) {
+        char[] innehold = new char[b.length()];
+        boolean returVerdi = true;
+        for(int i = 0; i < b.length(); i++) {
+            innehold[i] = b.charAt(i);
+        }
+
+        for(int i = 0; i < a.length(); i++) {
+            boolean currentElement = false;
+            for(int j = 0; j < b.length(); j++) {
+                if(innehold[j] == a.charAt(i)) {
+                    innehold[j] = '0';
+                    currentElement = true;
+                    break;
+                }
+            }
+            if(!currentElement)
+                returVerdi = false;
+        }
+        return returVerdi;
+    }
 
     //Hjelpefunksjoner
 
