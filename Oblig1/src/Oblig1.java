@@ -3,10 +3,6 @@ import java.util.*;
 public class Oblig1 {
 
     public static void main(String[] args) {
-        int[] a = randPerm(20);
-        System.out.println(Arrays.toString(a));
-        delsortering(a);
-        System.out.println(Arrays.toString(a));
     }
 
     //Oppgave 1)
@@ -128,7 +124,11 @@ public class Oblig1 {
                 h--;
             }
 
-            if (v < h) bytt(a,v++,h--);
+            if (v < h) {
+                bytt(a,v,h);
+                v++;
+                h++;
+            }
             else  return v;
         }
     }
@@ -172,7 +172,6 @@ public class Oblig1 {
         }
 
         int s = euklids(lengde, k);
-        System.out.println(s);
 
         for (int i = 0; i < s; i++)
         {
@@ -218,21 +217,24 @@ public class Oblig1 {
 
     //Oppgave 7b
     public static String flett(String... s) {
+        if(s.length < 1) {
+            return "";
+        }
         int max = s[0].length();
         for(int i = 1; i < s.length; i++) {         //Finner lengden på lengste String
-            if(s[i].length() > s[i-1].length()) {
+            if(s[i].length() > max) {
                 max = s[i].length();
             }
         }
+
 
         String flettet = "";
         for (int i = 0; i < max; i++) {             //itererer gjennom s like mange ganger som lengde på lengste String
             for(int j = 0; j < s.length; j++) {
                 try {
-                    flettet += s[j].charAt(i);      //Legger til tegn nr i fra hver String i den nye Stringen "flettet"
-                }
-                catch (IndexOutOfBoundsException e) {   //Dersom Stringen ikke har flere tegn går den til neste String
-                    continue;
+                    flettet += s[j].charAt(i);
+                } catch (StringIndexOutOfBoundsException e) {
+
                 }
             }
         }
