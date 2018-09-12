@@ -4,11 +4,9 @@ public class Oblig1 {
 
     public static void main(String[] args) {
         System.out.println("Hello world");
-        int[] a = {5,2,4,1,3, 6};
+        int[] a = randPerm(5);
         System.out.println(Arrays.toString(a));
-        delsortering(a);
-        System.out.println(Arrays.toString(a));
-
+        indekssrtering(a);
     }
 
     //Oppgave 1)
@@ -102,16 +100,33 @@ public class Oblig1 {
 
     //Oppgave 4
     public static void delsortering(int[] a) {
-        
+        for (int i = a.length; i > 1; i--)
+        {
+            for (int j = 1; j < i; j++)
+            {
+                if (a[j - 1] > a[j])  {
+                    bytt(a, j - 1, j);
+                }
+                if(a[j-1] % 2 == 0 && a[j] % 2 != 0) {
+                    bytt(a, j - 1, j);
+                }
+            }
+        }
     }
 
     //Oppgave 5 (Funker ikke med 0 verdier)
     public static void rotasjon(char[] a) {
-        char last = a[a.length - 1];
-        for (int i = a.length - 1; i > 0; --i) {
-            a[i] = a[i-1];
+        char last = 'a';
+        for (int i = a.length; i > 1; --i) {
+            if(i == a.length) {
+                last = a[i-1];
+            }
+            a[i-1] = a[i-2];
+            if(i-2 == 0) {
+                a[0] = last;
+            }
         }
-        a[0] = last;
+        System.out.println(Arrays.toString(a));
     }
 
     //Oppgave 6 (Kan ikke kjøre med negativ k)
@@ -125,6 +140,7 @@ public class Oblig1 {
         }
         System.out.println(Arrays.toString(a));
     }
+
 
 
     //Hjelpefunksjoner hentet fra ukesopppgavene
@@ -159,5 +175,20 @@ public class Oblig1 {
         int temp = a[i];
         a[i] = a[j];
         a[j] = temp;
+    }
+
+    public static int[] indekssrtering(int[] a) {
+        int[] indecises = new int[a.length];
+        for (int i = 0; i < a.length; i++) indecises[i] = i;
+        for (int i = a.length-1; i > 0; i--) {
+            for (int j = 0; j < a.length; j++) {
+                if (a[indecises[j]] > a[i]) {
+                    System.out.println(a[indecises[j]]);
+                    System.out.println(a[i]);
+                }
+                System.out.println();
+            }
+        }
+        return indecises;
     }
 }
