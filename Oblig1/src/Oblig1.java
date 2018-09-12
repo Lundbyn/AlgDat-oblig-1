@@ -3,10 +3,9 @@ import java.util.*;
 public class Oblig1 {
 
     public static void main(String[] args) {
-        char[] a = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q'};
+        int[] a = randPerm(20);
         System.out.println(Arrays.toString(a));
-        rotasjon(a, 34);
-        System.out.println("A: " + a.length);
+        delsortering(a);
         System.out.println(Arrays.toString(a));
     }
 
@@ -94,35 +93,62 @@ public class Oblig1 {
 
     //Oppgave 4
     public static void delsortering(int[] a) {
-
-    }
-
-    private static void kvikksortering0(int[] a, int v, int h)  // en privat metode
-    {
-        if (v >= h) return;  // a[v:h] er tomt eller har maks ett element
-        int k = sParter0(a, v, h, (v + h)/2);  // bruker midtverdien
-        kvikksortering0(a, v, k - 1);     // sorterer intervallet a[v:k-1]
-        kvikksortering0(a, k + 1, h);     // sorterer intervallet a[k+1:h]
-    }
-
-    private static int sParter0(int[] a, int v, int h, int indeks)
-    {
-        bytt(a, indeks, h);           // skilleverdi a[indeks] flyttes bakerst
-        int pos = parter0(a, v, h - 1, a[h]);  // partisjonerer a[v:h − 1]
-        bytt(a, pos, h);              // bytter for å få skilleverdien på rett plass
-        return pos;                   // returnerer posisjonen til skilleverdien
-    }
-
-    private static int parter0(int[] a, int v, int h, int skilleverdi)
-    {
-        while (true)                                  // stopper når v > h
-        {
-            while (v <= h && a[v] < skilleverdi) v++;   // h er stoppverdi for v
-            while (v <= h && a[h] >= skilleverdi) h--;  // v er stoppverdi for h
-
-            if (v < h) bytt(a,v++,h--);                 // bytter om a[v] og a[h]
-            else  return v;  // a[v] er nåden første som ikke er mindre enn skilleverdi
+        if(a.length < 2) {
+            return;
         }
+        int v = 0;
+        int h = a.length-1;
+        while (true) {
+            while (v < a.length && a[v] % 2 != 0 ) {
+                v++;
+            }
+            while (h > 0 && a[h] % 2 == 0) {
+                h--;
+            }
+            if(v >= h) {
+                break;
+            }
+            if(v < h) {
+                bytt(a, v, h);
+            }
+        }
+
+        kvikksortering(a,0,h);
+        kvikksortering(a, v, a.length - 1);
+    }
+
+    private static int parter(int[] a, int v, int h, int m)
+    {
+        while (true)
+        {
+            while (v <= h && a[v] < m) {
+                v++;
+            }
+            while (v <= h && a[h] >= m) {
+                h--;
+            }
+
+            if (v < h) bytt(a,v++,h--);
+            else  return v;
+        }
+    }
+
+    private static int sParter(int[] a, int v, int h, int skilleverdi)
+    {
+        bytt(a, skilleverdi, h);
+        int skilleverdi_indeks = parter(a, v, h - 1, a[h]);
+        bytt(a, skilleverdi_indeks, h);
+        return skilleverdi_indeks;
+    }
+
+    private static void kvikksortering(int[] a, int v, int h)  // en privat metode
+    {
+        if (v >= h) {
+            return;
+        }
+        int k = sParter(a, v, h, (v + h)/2);
+        kvikksortering(a, v, k - 1);
+        kvikksortering(a, k + 1, h);
     }
 
     //Oppgave 5
@@ -146,14 +172,17 @@ public class Oblig1 {
         }
 
         int s = euklids(lengde, k);
+        System.out.println(s);
 
         for (int i = 0; i < s; i++)
         {
             char verdi = a[i];
-            for (int j = i - k, n = i; j != i; j -= k)
+            int n = i;
+            for (int j = i - k; j != i; j -= k)
             {
                 if (j < 0) j += lengde;
-                a[n] = a[j]; n = j;
+                a[n] = a[j];
+                n = j;
             }
             a[i + k] = verdi;
         }
