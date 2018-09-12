@@ -3,9 +3,10 @@ import java.util.*;
 public class Oblig1 {
 
     public static void main(String[] args) {
-        char[] a = {'a', 'b', 'c', 'd'};
+        char[] a = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q'};
         System.out.println(Arrays.toString(a));
-        rotasjon(a,10);
+        rotasjon(a, 34);
+        System.out.println("A: " + a.length);
         System.out.println(Arrays.toString(a));
     }
 
@@ -132,12 +133,39 @@ public class Oblig1 {
     }
 
     //Oppgave 6
-    public static void rotasjon(char[] a, int k) {
-        int indeks = k % a.length;
-        for(int i = 0; i > indeks; ++i) {
-            for(int j = 1; j < a.length; ++j) {
-                bytt(a,j,j-1);
+    public static void rotasjon(char[] a, int k)    // 3. versjon
+    {
+        int lengde = a.length;
+        if (lengde < 2) {
+            return;
+        }
+
+        k = k % lengde;
+        if (k < 0) {
+            k += lengde;
+        }
+
+        int s = euklids(lengde, k);
+
+        for (int i = 0; i < s; i++)
+        {
+            char verdi = a[i];
+            for (int j = i - k, n = i; j != i; j -= k)
+            {
+                if (j < 0) j += lengde;
+                a[n] = a[j]; n = j;
             }
+            a[i + k] = verdi;
+        }
+    }
+
+    public static int euklids(int a, int k)
+    {
+        if (k == 0) {
+            return a;
+        }
+        else {
+            return euklids(k, a % k);
         }
     }
 
