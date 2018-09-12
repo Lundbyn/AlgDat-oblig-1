@@ -3,9 +3,10 @@ import java.util.*;
 public class Oblig1 {
 
     public static void main(String[] args) {
-        System.out.println("Hello world");
-        System.out.println(flett("ADGJ", "BEHK", "CFIL FUCK", "OMEGALUL", "55555555555555555555555555555555"));
-
+        char[] a = {'a', 'b', 'c', 'd'};
+        System.out.println(Arrays.toString(a));
+        rotasjon(a,10);
+        System.out.println(Arrays.toString(a));
     }
 
     //Oppgave 1)
@@ -43,13 +44,12 @@ public class Oblig1 {
                 bytt(a, i, i-1);
             }
         }
-        System.out.println();
         return a[a.length-1];
     }
 
     //Sjekker hvor mange ombyttinger som blir utført
     public static int ombyttinger(int[] a) {
-        int antOmbyttinger = 1;
+        int antOmbyttinger = 0;
         for (int i = 1; i < a.length; ++i) {
             if(a[i] < a[i-1]) {
                 bytt(a, i, i-1);
@@ -99,7 +99,35 @@ public class Oblig1 {
 
     //Oppgave 4
     public static void delsortering(int[] a) {
-        
+
+    }
+
+    private static void kvikksortering0(int[] a, int v, int h)  // en privat metode
+    {
+        if (v >= h) return;  // a[v:h] er tomt eller har maks ett element
+        int k = sParter0(a, v, h, (v + h)/2);  // bruker midtverdien
+        kvikksortering0(a, v, k - 1);     // sorterer intervallet a[v:k-1]
+        kvikksortering0(a, k + 1, h);     // sorterer intervallet a[k+1:h]
+    }
+
+    private static int sParter0(int[] a, int v, int h, int indeks)
+    {
+        bytt(a, indeks, h);           // skilleverdi a[indeks] flyttes bakerst
+        int pos = parter0(a, v, h - 1, a[h]);  // partisjonerer a[v:h − 1]
+        bytt(a, pos, h);              // bytter for å få skilleverdien på rett plass
+        return pos;                   // returnerer posisjonen til skilleverdien
+    }
+
+    private static int parter0(int[] a, int v, int h, int skilleverdi)
+    {
+        while (true)                                  // stopper når v > h
+        {
+            while (v <= h && a[v] < skilleverdi) v++;   // h er stoppverdi for v
+            while (v <= h && a[h] >= skilleverdi) h--;  // v er stoppverdi for h
+
+            if (v < h) bytt(a,v++,h--);                 // bytter om a[v] og a[h]
+            else  return v;  // a[v] er nåden første som ikke er mindre enn skilleverdi
+        }
     }
 
     //Oppgave 5
@@ -111,16 +139,10 @@ public class Oblig1 {
 
     //Oppgave 6
     public static void rotasjon(char[] a, int k) {
-        for (int i = 0; i < Math.abs(k); i++) {
-            if(k > 0) {
-                for (int j = a.length - 1; j > 0; --j) {
-                    bytt(a, j, j - 1);
-                }
-            }
-            else {
-                for (int j = 0; j < a.length - 1; ++j) {
-                    bytt(a, j, j+1);
-                }
+        int indeks = k % a.length;
+        for(int i = 0; i > indeks; ++i) {
+            for(int j = 1; j < a.length; ++j) {
+                bytt(a,j,j-1);
             }
         }
     }
@@ -166,6 +188,69 @@ public class Oblig1 {
         return flettet;
     }
 
+    //Oppgave 8
+    public static int[] indekssortering(int[] a) {
+        int[] indeks = new int[a.length];
+        for(int i = 0; i < indeks.length; ++i) {
+            indeks[i] = i;
+        }
+        for(int i = a.length - 1; i > 0; --i) {
+            for(int j = 0; j < i; ++j) {
+                if(a[indeks[i]] < a[indeks[j]]) {
+                    bytt(indeks, i, j);
+                }
+            }
+        }
+        return indeks;
+    }
+
+    //Oppgave 9
+    public static int[] tredjeMin(int[] a) {
+        if(a.length < 3) {
+            throw new NoSuchElementException("Arrayen må inneholde minst 3 elementer");
+        }
+        int[] startIndekser = indekssortering(kopierArray(a, 3));
+
+        int minstIndeks = startIndekser[0];
+        int nestMinstIndeks = startIndekser[1];
+        int tredjMinstIndeks = startIndekser[2];
+
+        int minst = a[minstIndeks];
+        int nestMinst = a[nestMinstIndeks];
+        int tredjMinst = a[tredjMinstIndeks];
+
+        for(int i = 3; i < a.length; i++) {
+            if(a[i] < tredjMinst) {
+                if(a[i] < nestMinst) {
+                    if(a[i] < minst) {
+                        tredjMinstIndeks = nestMinstIndeks;
+                        nestMinstIndeks = minstIndeks;
+                        minstIndeks = i;
+
+                        tredjMinst = nestMinst;
+                        nestMinst = minst;
+                        minst = a[i];
+                        continue;
+                    }
+                    tredjMinstIndeks = nestMinstIndeks;
+                    nestMinstIndeks = i;
+
+                    tredjMinst = nestMinst;
+                    nestMinst = a[i];
+                    continue;
+                }
+                tredjMinstIndeks = i;
+
+                tredjMinst = a[i];
+                continue;
+            }
+        }
+
+        int[] minsteVerdier = {minstIndeks, nestMinstIndeks, tredjMinstIndeks};
+
+        return minsteVerdier;
+    }
+
 
     //Hjelpefunksjoner
 
@@ -207,5 +292,14 @@ public class Oblig1 {
         char temp = a[i];
         a[i] = a[j];
         a[j] = temp;
+    }
+
+    //Kopierer n elementer fra et array inn i et nytt array. Starter på indeks 0.
+    public static int[] kopierArray(int[] a, int n) {
+        int[] b = new int[n];
+        for(int i = 0; i < n; ++i) {
+            b[i] = a[i];
+        }
+        return b;
     }
 }
