@@ -3,6 +3,7 @@ import java.util.*;
 public class Oblig1 {
 
     public static void main(String[] args) {
+        System.out.println(inneholdt("HEIHEI", "HALLOISEN"));
     }
 
     //Oppgave 1)
@@ -187,7 +188,7 @@ public class Oblig1 {
         }
     }
 
-    public static int euklids(int a, int k)
+    public static int euklids(int a, int k) ///Finner største felles divisor
     {
         if (k == 0) {
             return a;
@@ -306,26 +307,22 @@ public class Oblig1 {
 
     //Oppgave 10
     public static boolean inneholdt(String a, String b) {
-        char[] innehold = new char[b.length()];
-        boolean returVerdi = true;
-        for(int i = 0; i < b.length(); i++) {
-            innehold[i] = b.charAt(i);
-        }
+        String c = "";
+        String bruktIndeks = "";
 
-        for(int i = 0; i < a.length(); i++) {
-            boolean currentElement = false;
-            for(int j = 0; j < b.length(); j++) {
-                if(innehold[j] == a.charAt(i)) {
-                    innehold[j] = '0';
-                    currentElement = true;
-                    break;
-                }
+        int i = 0;
+        int j = 0;
+        while (i < a.length() && j < b.length()) {
+            if(a.charAt(i) == b.charAt(j)) {
+                c += a.charAt(i);
+                i++;
+                j = 0;
             }
-            if(!currentElement)
-                returVerdi = false;
+            j++;
         }
-        return returVerdi;
+        return c.equals(a);
     }
+
 
     //Hjelpefunksjoner
 
