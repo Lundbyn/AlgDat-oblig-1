@@ -3,26 +3,32 @@ import java.util.*;
 public class Oblig1 {
 
     public static void main(String[] args) {
-        System.out.println(inneholdt("", ""));
+        System.out.println(inneholdt("ABCB", "1MA2KCBB"));
     }
 
     //Oppgave 1)
 
     /*
+
     Teorisporsmaal:
    - Hvor mange sammenligninger (som funksjon av n) blir det for en tabell med n verdier.
    Funksjonen iterer gjennom arrayen en gang, hvor den kjorer en sammeligning per iterasjon.
    Siden for-loopen starter paa i = 1 blir antall sammenligninger = n - 1.
+
    - Naar blir det flest ombyttinger?
    Det blir flest ombyttinger dersom det storste tallet i arrayen er paa den posisjon 0.
+
    - Naar blir det faerrest?
    Det blir faerrest ombyttinger dersom det storste tallet i arrayen er paa siste posisjon (array.length - 1).
+
    - Hvor mange blir det i gjennomsnitt?
     Ved å bruke ombyttinger-fuksjonen fant jeg at når man bruker et stort tall (big O) gjør den nesten n ombyttinger
     Vi kan derfor si at gjennomsnittet er O(n).
+
     - Kan du på grunnlag av dette si om metoden maks er bedre (eller dårligere) enn de maks-metodene vi har sett på tidligere?
     Begge har en big O notation på O(n), så de er ca like raske i snitt. Denne maks funskjonen har flere operasjoner inne i
     if statementet enn de gamle, derfor er denne hakket dårligere enn de andre maks-fuksjonene.
+
     */
 
     //Boblesortering som sender det storste tallet i tabellen til siste posisjon i arrayen.
@@ -49,7 +55,6 @@ public class Oblig1 {
         }
         return antOmbyttinger;
     }
-
 
     //Oppgave 2
     public static int antallUlikeSortert(int[] a) {
@@ -310,25 +315,35 @@ public class Oblig1 {
         if(a.length() == 0) {
             return true;
         }
+        if(b.length() == 0) {
+            return false;
+        }
+
         int[] a_ASCII = new int[a.length()];
         int[] b_ASCII = new int[b.length()];
 
         for(int i = 0; i < a_ASCII.length; ++i) {
             a_ASCII[i] = a.charAt(i);
         }
+
         for(int i = 0; i < b_ASCII.length; ++i) {
             b_ASCII[i] = b.charAt(i);
+
         }
 
-        kvikksortering(a_ASCII, 0, a_ASCII.length - 1);
-        kvikksortering(b_ASCII, 0, b_ASCII.length - 1);
 
+        //Stack overflow :(
+        //kvikksortering(a_ASCII, 0, a_ASCII.length - 1);
+        //kvikksortering(b_ASCII, 0, b_ASCII.length - 1);
+
+        flettesortering(a_ASCII);
+        flettesortering(b_ASCII);
 
         int j = 0;
         for (int i = 0; i < b_ASCII.length; ++i) {
             if(a_ASCII[j] == b_ASCII[i]) {
                 j++;
-                if(j==a_ASCII.length) {
+                if(j == a_ASCII.length) {
                     return true;
                 }
             }
@@ -337,15 +352,63 @@ public class Oblig1 {
         return false;
     }
 
+    public static void flettesortering(int[] a) {
+        int n = a.length;
+        int[] b = new int[n];
+        for (int i = 0; i < n; ++i) {
+            b[i] = a[i];
+        }
+        flettesorter(a,b,0,n);
+    }
+
+    public static void flettesorter(int[] a, int[] b, int fra, int til) {
+        if(til - fra < 2) {
+            return;
+        }
+        int m = (fra + til) / 2;
+
+        flettesorter(a,b,fra,m);
+        flettesorter(a,b,m,til);
+
+        if(a[m-1] > a[m]) {
+            flettInt(a,b,fra,m,til);
+        }
+    }
+
+    public static void flettInt(int[] a, int[] b, int fra, int m, int til) {
+        int n = m - fra;
+        for(int i = 0; i < n; ++i) {
+            b[i] = a[i + fra];
+        }
+
+        int i = 0;
+        int j = m;
+        int k = fra;
+
+        while (i < n && j < til) {
+            if(b[i] <= a[j]) {
+                a[k] = b[i];
+                i++;
+
+            }
+            else {
+                a[k] = a[j];
+                j++;
+            }
+            k++;
+            //a[k] = b[i] <= a[j] ? b[i] : a[j];
+        }
+
+        while (i < n) {
+            a[k] = b[i];
+            k++;
+            i++;
+        }
+    }
+
 
     //Hjelpefunksjoner
 
-    //Skriver ut en array
-    public static void skriv(int[] a) {
-        for(int i : a) {
-            System.out.print(i + ", ");
-        }
-    }
 
     //lager en array fra 1 til n i tilfeldig rekkefølge
     public static int[] randPerm(int n)  // en effektiv versjon

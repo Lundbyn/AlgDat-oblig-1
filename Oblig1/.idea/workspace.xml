@@ -15,14 +15,11 @@
       <file leaf-file-name="Oblig1.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Oblig1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-842">
-              <caret line="310" column="24" lean-forward="false" selection-start-line="310" selection-start-column="24" selection-end-line="310" selection-end-column="24" />
+            <state relative-caret-position="170">
+              <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
               <folding>
                 <element signature="e#87#88#0" expanded="true" />
-                <element signature="e#140#141#0" expanded="true" />
-                <element signature="method#maks#0;class#Oblig1#0" expanded="false" />
-                <element signature="method#ombyttinger#0;class#Oblig1#0" expanded="false" />
-                <element signature="method#antallUlikeSortert#0;class#Oblig1#0" expanded="false" />
+                <element signature="e#152#153#0" expanded="true" />
                 <element signature="method#antallUlikeUsortert#0;class#Oblig1#0" expanded="false" />
                 <element signature="method#delsortering#0;class#Oblig1#0" expanded="false" />
                 <element signature="method#parter#0;class#Oblig1#0" expanded="false" />
@@ -46,8 +43,8 @@
       <file leaf-file-name="Oblig1Test.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Oblig1Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-342">
-              <caret line="917" column="9" lean-forward="true" selection-start-line="917" selection-start-column="9" selection-end-line="917" selection-end-column="9" />
+            <state relative-caret-position="459">
+              <caret line="40" column="31" lean-forward="false" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -70,6 +67,7 @@
       <find>sistePartall</find>
       <find>j</find>
       <find>inneholdt</find>
+      <find>oppgave 10</find>
     </findStrings>
     <replaceStrings>
       <replace>ae</replace>
@@ -98,10 +96,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="118" />
     <option name="y" value="-15" />
-    <option name="width" value="1942" />
+    <option name="width" value="1940" />
     <option name="height" value="1042" />
   </component>
   <component name="ProjectView">
@@ -137,8 +135,8 @@
       </pane>
       <pane id="Scratches" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -159,7 +157,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Oblig1Test">
+  <component name="RunManager" selected="Application.Oblig1">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -275,8 +273,8 @@
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.Oblig1Test" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Oblig1" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Oblig1" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Oblig1Test" />
       </list>
     </recent_temporary>
   </component>
@@ -303,14 +301,15 @@
       <workItem from="1536762049876" duration="6309000" />
       <workItem from="1536823459031" duration="3177000" />
       <workItem from="1536842289011" duration="3825000" />
+      <workItem from="1536859759729" duration="7053000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48581000" />
+    <option name="totallyTimeSpent" value="55634000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -321,11 +320,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.318542" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31813362" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24816984" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2484375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -349,7 +348,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -360,10 +359,41 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#87#88#0" expanded="true" />
-            <element signature="e#140#141#0" expanded="true" />
-            <element signature="method#maks#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#ombyttinger#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#antallUlikeSortert#0;class#Oblig1#0" expanded="false" />
+            <element signature="e#152#153#0" expanded="true" />
+            <element signature="method#antallUlikeUsortert#0;class#Oblig1#0" expanded="false" />
+            <element signature="method#delsortering#0;class#Oblig1#0" expanded="false" />
+            <element signature="method#parter#0;class#Oblig1#0" expanded="false" />
+            <element signature="method#sParter#0;class#Oblig1#0" expanded="false" />
+            <element signature="method#kvikksortering#0;class#Oblig1#0" expanded="false" />
+            <element signature="method#rotasjon#0;class#Oblig1#0" expanded="false" />
+            <element signature="method#rotasjon#1;class#Oblig1#0" expanded="false" />
+            <element signature="method#euklids#0;class#Oblig1#0" expanded="false" />
+            <element signature="method#flett#0;class#Oblig1#0" expanded="false" />
+            <element signature="method#flett#1;class#Oblig1#0" expanded="false" />
+            <element signature="method#indekssortering#0;class#Oblig1#0" expanded="false" />
+            <element signature="method#tredjeMin#0;class#Oblig1#0" expanded="false" />
+            <element signature="method#bytt#0;class#Oblig1#0" expanded="false" />
+            <element signature="method#bytt#1;class#Oblig1#0" expanded="false" />
+            <element signature="method#kopierArray#0;class#Oblig1#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Oblig1Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15368">
+          <caret line="917" column="9" lean-forward="true" selection-start-line="917" selection-start-column="9" selection-end-line="917" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Oblig1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#87#88#0" expanded="true" />
+            <element signature="e#152#153#0" expanded="true" />
             <element signature="method#antallUlikeUsortert#0;class#Oblig1#0" expanded="false" />
             <element signature="method#delsortering#0;class#Oblig1#0" expanded="false" />
             <element signature="method#parter#0;class#Oblig1#0" expanded="false" />
@@ -397,10 +427,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#87#88#0" expanded="true" />
-            <element signature="e#140#141#0" expanded="true" />
-            <element signature="method#maks#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#ombyttinger#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#antallUlikeSortert#0;class#Oblig1#0" expanded="false" />
+            <element signature="e#152#153#0" expanded="true" />
             <element signature="method#antallUlikeUsortert#0;class#Oblig1#0" expanded="false" />
             <element signature="method#delsortering#0;class#Oblig1#0" expanded="false" />
             <element signature="method#parter#0;class#Oblig1#0" expanded="false" />
@@ -434,10 +461,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#87#88#0" expanded="true" />
-            <element signature="e#140#141#0" expanded="true" />
-            <element signature="method#maks#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#ombyttinger#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#antallUlikeSortert#0;class#Oblig1#0" expanded="false" />
+            <element signature="e#152#153#0" expanded="true" />
             <element signature="method#antallUlikeUsortert#0;class#Oblig1#0" expanded="false" />
             <element signature="method#delsortering#0;class#Oblig1#0" expanded="false" />
             <element signature="method#parter#0;class#Oblig1#0" expanded="false" />
@@ -471,10 +495,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#87#88#0" expanded="true" />
-            <element signature="e#140#141#0" expanded="true" />
-            <element signature="method#maks#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#ombyttinger#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#antallUlikeSortert#0;class#Oblig1#0" expanded="false" />
+            <element signature="e#152#153#0" expanded="true" />
             <element signature="method#antallUlikeUsortert#0;class#Oblig1#0" expanded="false" />
             <element signature="method#delsortering#0;class#Oblig1#0" expanded="false" />
             <element signature="method#parter#0;class#Oblig1#0" expanded="false" />
@@ -500,10 +521,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#87#88#0" expanded="true" />
-            <element signature="e#140#141#0" expanded="true" />
-            <element signature="method#maks#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#ombyttinger#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#antallUlikeSortert#0;class#Oblig1#0" expanded="false" />
+            <element signature="e#152#153#0" expanded="true" />
             <element signature="method#antallUlikeUsortert#0;class#Oblig1#0" expanded="false" />
             <element signature="method#delsortering#0;class#Oblig1#0" expanded="false" />
             <element signature="method#parter#0;class#Oblig1#0" expanded="false" />
@@ -529,10 +547,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#87#88#0" expanded="true" />
-            <element signature="e#140#141#0" expanded="true" />
-            <element signature="method#maks#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#ombyttinger#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#antallUlikeSortert#0;class#Oblig1#0" expanded="false" />
+            <element signature="e#152#153#0" expanded="true" />
             <element signature="method#antallUlikeUsortert#0;class#Oblig1#0" expanded="false" />
             <element signature="method#delsortering#0;class#Oblig1#0" expanded="false" />
             <element signature="method#parter#0;class#Oblig1#0" expanded="false" />
@@ -558,10 +573,7 @@
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
             <element signature="e#87#88#0" expanded="true" />
-            <element signature="e#140#141#0" expanded="true" />
-            <element signature="method#maks#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#ombyttinger#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#antallUlikeSortert#0;class#Oblig1#0" expanded="false" />
+            <element signature="e#152#153#0" expanded="true" />
             <element signature="method#antallUlikeUsortert#0;class#Oblig1#0" expanded="false" />
             <element signature="method#delsortering#0;class#Oblig1#0" expanded="false" />
             <element signature="method#parter#0;class#Oblig1#0" expanded="false" />
@@ -587,10 +599,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#87#88#0" expanded="true" />
-            <element signature="e#140#141#0" expanded="true" />
-            <element signature="method#maks#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#ombyttinger#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#antallUlikeSortert#0;class#Oblig1#0" expanded="false" />
+            <element signature="e#152#153#0" expanded="true" />
             <element signature="method#antallUlikeUsortert#0;class#Oblig1#0" expanded="false" />
             <element signature="method#delsortering#0;class#Oblig1#0" expanded="false" />
             <element signature="method#parter#0;class#Oblig1#0" expanded="false" />
@@ -616,39 +625,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#87#88#0" expanded="true" />
-            <element signature="e#140#141#0" expanded="true" />
-            <element signature="method#maks#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#ombyttinger#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#antallUlikeSortert#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#antallUlikeUsortert#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#delsortering#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#parter#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#sParter#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#kvikksortering#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#rotasjon#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#rotasjon#1;class#Oblig1#0" expanded="false" />
-            <element signature="method#euklids#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#flett#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#flett#1;class#Oblig1#0" expanded="false" />
-            <element signature="method#indekssortering#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#tredjeMin#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#bytt#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#bytt#1;class#Oblig1#0" expanded="false" />
-            <element signature="method#kopierArray#0;class#Oblig1#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Oblig1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-842">
-          <caret line="310" column="24" lean-forward="false" selection-start-line="310" selection-start-column="24" selection-end-line="310" selection-end-column="24" />
-          <folding>
-            <element signature="e#87#88#0" expanded="true" />
-            <element signature="e#140#141#0" expanded="true" />
-            <element signature="method#maks#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#ombyttinger#0;class#Oblig1#0" expanded="false" />
-            <element signature="method#antallUlikeSortert#0;class#Oblig1#0" expanded="false" />
+            <element signature="e#152#153#0" expanded="true" />
             <element signature="method#antallUlikeUsortert#0;class#Oblig1#0" expanded="false" />
             <element signature="method#delsortering#0;class#Oblig1#0" expanded="false" />
             <element signature="method#parter#0;class#Oblig1#0" expanded="false" />
@@ -670,9 +647,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Oblig1Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-342">
-          <caret line="917" column="9" lean-forward="true" selection-start-line="917" selection-start-column="9" selection-end-line="917" selection-end-column="9" />
+        <state relative-caret-position="459">
+          <caret line="40" column="31" lean-forward="false" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Oblig1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <folding>
+            <element signature="e#87#88#0" expanded="true" />
+            <element signature="e#152#153#0" expanded="true" />
+            <element signature="method#antallUlikeUsortert#0;class#Oblig1#0" expanded="false" />
+            <element signature="method#delsortering#0;class#Oblig1#0" expanded="false" />
+            <element signature="method#parter#0;class#Oblig1#0" expanded="false" />
+            <element signature="method#sParter#0;class#Oblig1#0" expanded="false" />
+            <element signature="method#kvikksortering#0;class#Oblig1#0" expanded="false" />
+            <element signature="method#rotasjon#0;class#Oblig1#0" expanded="false" />
+            <element signature="method#rotasjon#1;class#Oblig1#0" expanded="false" />
+            <element signature="method#euklids#0;class#Oblig1#0" expanded="false" />
+            <element signature="method#flett#0;class#Oblig1#0" expanded="false" />
+            <element signature="method#flett#1;class#Oblig1#0" expanded="false" />
+            <element signature="method#indekssortering#0;class#Oblig1#0" expanded="false" />
+            <element signature="method#tredjeMin#0;class#Oblig1#0" expanded="false" />
+            <element signature="method#bytt#0;class#Oblig1#0" expanded="false" />
+            <element signature="method#bytt#1;class#Oblig1#0" expanded="false" />
+            <element signature="method#kopierArray#0;class#Oblig1#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
