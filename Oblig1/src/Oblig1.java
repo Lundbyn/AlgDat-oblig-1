@@ -3,7 +3,7 @@ import java.util.*;
 public class Oblig1 {
 
     public static void main(String[] args) {
-        System.out.println(inneholdt("HEIHEI", "HALLOISEN"));
+        System.out.println(inneholdt("", ""));
     }
 
     //Oppgave 1)
@@ -307,20 +307,34 @@ public class Oblig1 {
 
     //Oppgave 10
     public static boolean inneholdt(String a, String b) {
-        String c = "";
-        String bruktIndeks = "";
-
-        int i = 0;
-        int j = 0;
-        while (i < a.length() && j < b.length()) {
-            if(a.charAt(i) == b.charAt(j)) {
-                c += a.charAt(i);
-                i++;
-                j = 0;
-            }
-            j++;
+        if(a.length() == 0) {
+            return true;
         }
-        return c.equals(a);
+        int[] a_ASCII = new int[a.length()];
+        int[] b_ASCII = new int[b.length()];
+
+        for(int i = 0; i < a_ASCII.length; ++i) {
+            a_ASCII[i] = a.charAt(i);
+        }
+        for(int i = 0; i < b_ASCII.length; ++i) {
+            b_ASCII[i] = b.charAt(i);
+        }
+
+        kvikksortering(a_ASCII, 0, a_ASCII.length - 1);
+        kvikksortering(b_ASCII, 0, b_ASCII.length - 1);
+
+
+        int j = 0;
+        for (int i = 0; i < b_ASCII.length; ++i) {
+            if(a_ASCII[j] == b_ASCII[i]) {
+                j++;
+                if(j==a_ASCII.length) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 
 
