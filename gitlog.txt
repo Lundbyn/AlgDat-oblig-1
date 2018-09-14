@@ -1,0 +1,180 @@
+Author: Mezzeto <Mathias_Lundby@hotmail.com>
+Date:   Fri Sep 14 09:41:12 2018 +0200
+
+    Siste endringer
+
+    Gjort de siste endringene og er klar for innlevering
+
+commit b7e6cfb8fbe4934e6ce46de1c3ceccd1a03e7620
+Author: Mezzeto <Mathias_Lundby@hotmail.com>
+Date:   Thu Sep 13 21:27:24 2018 +0200
+
+    Oppgave 10 passerer test
+
+    ^Yaboii
+
+commit 10cd2013570eb707c332b31b436c80000dc426f9
+Author: Mezzeto <Mathias_Lundby@hotmail.com>
+Date:   Thu Sep 13 17:20:23 2018 +0200
+
+    Oppgave 10, StackOverFlow
+
+    Oppgave 10, StackOverFlow, må sortere på annen måte
+
+commit ecd0abe54a1623194aeb7ba74242625262112d21
+Author: Mezzeto <Mathias_Lundby@hotmail.com>
+Date:   Thu Sep 13 13:47:29 2018 +0200
+
+    glem denne
+
+    tja hva skal man si?
+
+commit 18f5340bd070b9549b30abb63673ac54b2514d76
+Author: Mezzeto <Mathias_Lundby@hotmail.com>
+Date:   Thu Sep 13 13:47:06 2018 +0200
+
+    Ny oppgave 10, med bugs
+
+    Ny oppgave 10, med bugs
+
+commit 9bb082ceec91062a6161f9f6bb42b3177592ffdd
+Author: Mezzeto <Mathias_Lundby@hotmail.com>
+Date:   Wed Sep 12 18:11:16 2018 +0200
+
+    Begynt oppgave 10, for treig
+
+    Begynt oppgave 10, for treig
+
+commit a807f72ea4c4b68b5810d45c6fcc46a34135f11e
+Author: Mezzeto <Mathias_Lundby@hotmail.com>
+Date:   Wed Sep 12 17:14:17 2018 +0200
+
+    Fikse bug i 7b, passerer test
+
+    Fikset buggen i oppgave 7b som gjorde at funksjonen ga feil resultater når siste element ikke var det lengste.
+
+commit 7f76fdfe5c120ad676c597626ea7eebafcf93553
+Author: Mezzeto <Mathias_Lundby@hotmail.com>
+Date:   Wed Sep 12 13:23:54 2018 +0200
+
+    Oppgave 4 består testen
+
+    Oppgave 4 består testen
+
+commit ae7ad6e5ae5751b0d0011b10e5886c5dcb3ebe6c
+Author: Mezzeto <Mathias_Lundby@hotmail.com>
+Date:   Wed Sep 12 12:43:13 2018 +0200
+
+    Oppgave 6 passerer test
+
+    Oppgave 6 passerer test
+
+commit bee5f91af29b7dc2802bbae92e8f032af474c949
+Author: Mezzeto <Mathias_Lundby@hotmail.com>
+Date:   Wed Sep 12 11:14:48 2018 +0200
+
+    Gikk en verjson tilbake
+
+    Gikk en verjson tilbake
+
+commit 40d4a583ad62976eec155c91482878fd310acfc0
+Merge: c8f6482 9046162
+Author: Mezzeto <Mathias_Lundby@hotmail.com>
+Date:   Wed Sep 12 11:10:38 2018 +0200
+
+    Merge branch 'master' of https://github.com/Lundbyn/AlgDat-oblig-1
+
+commit c8f6482887b047bd7201983a535d70b93e5b8db7
+Author: Mezzeto <Mathias_Lundby@hotmail.com>
+Date:   Wed Sep 12 11:09:27 2018 +0200
+
+    push fra stasjonær
+
+    push fra stasjonær
+
+commit 90461621ffef4046d4b29a30ed3b17fd8291ad05
+Author: Mezzeto <Mathias_Lundby@hotmail.com>
+Date:   Wed Sep 12 11:03:39 2018 +0200
+
+    Endret ineffektive metoder
+
+    Noen forsøk på å optimalisere metodene
+
+commit 00df66ed103955be24e24e0c67fb920e03488a56
+Author: Mezzeto <Mathias_Lundby@hotmail.com>
+Date:   Wed Sep 5 18:01:05 2018 +0200
+
+    Oppgave 7 +Fikset oppgave 5 og 6
+
+    Summary ^
+
+commit a860b959f85b1b9df6814f464acb86317c426a9f
+Author: Mezzeto <Mathias_Lundby@hotmail.com>
+Date:   Tue Sep 4 12:09:45 2018 +0200
+
+    Progress 04.09.2018
+
+    Eventuelle endringer side forrige push
+
+commit b47bb82a7b651cb6128e170e3945d8a3749b4941
+Author: Mezzeto <Mathias_Lundby@hotmail.com>
+Date:   Tue Sep 4 11:34:39 2018 +0200
+
+    Oppgave 5 og 6 (med bugs)
+
+    Delvis ferdig med oppgave 5 og 6. finnes tilfeller hvor de ikke funker
+
+commit 8be655a3b3e155fd878204c9fd2dca2c3eb94dab
+Author: Mezzeto <Mathias_Lundby@hotmail.com>
+Date:   Tue Sep 4 10:56:22 2018 +0200
+
+    Oppgave 5
+
+    Oppgave 5 fullført
+
+commit 5a53c3ad193081e03c18b08ebb27288729a55ad0
+Author: Mezzeto <Mathias_Lundby@hotmail.com>
+Date:   Mon Sep 3 17:45:48 2018 +0200
+
+    Oppgave 3
+
+    Oppgave 3 ferdig.
+
+commit 4ebb11da37cc0d1ac26a7e1d8088adbd1973146c
+Author: Mezzeto <Mathias_Lundby@hotmail.com>
+Date:   Mon Sep 3 14:50:58 2018 +0200
+
+    oppgave 2 v1
+
+    Oppgave 2, ikke optimalisert
+
+commit 9b88a7bebe1e0a7af1dabd70c043de234468c917
+Author: Mezzeto <Mathias_Lundby@hotmail.com>
+Date:   Mon Sep 3 14:23:04 2018 +0200
+
+    Oppgave 1
+
+    Besvarelse av oppgave 1
+
+commit 20c7ab7f5d7a3c6f19bce6ca388175042335d77f
+Author: Mezzeto <Mathias_Lundby@hotmail.com>
+Date:   Mon Sep 3 13:00:14 2018 +0200
+
+    Out
+
+    kjorte programmet og opprettet out mappa
+
+commit 9928eaa4b1c932b81a05812b8bea3babc8b679f6
+Author: Mezzeto <Mathias_Lundby@hotmail.com>
+Date:   Mon Sep 3 12:39:10 2018 +0200
+
+    Hello world
+
+    Opprettet prosekt og lagde "Hello world"
+
+commit f6c31826c8734c5a5c64d045639d114b1eac4017
+Author: Mezzeto <Mathias_Lundby@hotmail.com>
+Date:   Mon Sep 3 12:32:36 2018 +0200
+
+    Initial commit
+(END)
