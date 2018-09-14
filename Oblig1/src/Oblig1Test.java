@@ -2,12 +2,12 @@
 
 /*
 Testprogrammet har en main-metode som tester metodene i de 10 oppgavene.
-Som utgangspunkt er metodekallene kommentert vekk. Her må en passe på
-å bruke nøyaktig samme navn på metodene som det er bedt om i oppgaveteksten.
+Som utgangspunkt er metodekallene kommentert vekk. Her maa en passe paa
+aa bruke noyaktig samme navn paa metodene som det er bedt om i oppgaveteksten.
 
-Når en mener at en oppgave/metode er løst, bør en først teste med egne tester.
-Når en så tror at koden er feilfri, kan testprogrammet brukes ved at
-kommentartegnet foran metodekallet tas vekk. Testprogrammet må gi 0 feil før
+Naar en mener at en oppgave/metode er lost, bor en forst teste med egne tester.
+Naar en saa tror at koden er feilfri, kan testprogrammet brukes ved at
+kommentartegnet foran metodekallet tas vekk. Testprogrammet maa gi 0 feil for
 Oblig 1 sendes inn!
 */
 
@@ -33,7 +33,7 @@ public class Oblig1Test {
         if (antallFeil == 0) {
             System.out.println("Gratulerer!! Du passerte testen!");
         } else {
-            System.out.println("Må forbedres! Du har minst "
+            System.out.println("Maa forbedres! Du har minst "
                     + antallFeil + " feil eller svakheter!");
         }
     }
@@ -212,7 +212,7 @@ public class Oblig1Test {
 
         if (!Arrays.equals(a, b)) {
             System.out.println
-                    ("Oppgave 4: c) Metoden gjør feil for en tabell en verdi!");
+                    ("Oppgave 4: c) Metoden gjor feil for en tabell en verdi!");
             antallFeil++;
         }
 
@@ -229,7 +229,7 @@ public class Oblig1Test {
 
         if (!Arrays.equals(a, b)) {
             System.out.println
-                    ("Oppgave 4: e) Metoden gjør feil for en tabell en verdi!");
+                    ("Oppgave 4: e) Metoden gjor feil for en tabell en verdi!");
             antallFeil++;
         }
 
@@ -240,7 +240,7 @@ public class Oblig1Test {
             Oblig1.delsortering(a);  // kaller metoden
         } catch (Exception ex) {
             System.out.println
-                    ("Oppgave 4: f) Det går galt hvis det kun er partall!");
+                    ("Oppgave 4: f) Det gaar galt hvis det kun er partall!");
             antallFeil++;
         }
 
@@ -257,7 +257,7 @@ public class Oblig1Test {
             Oblig1.delsortering(a);  // kaller metoden
         } catch (Exception ex) {
             System.out.println
-                    ("Oppgave 4: h) Det går galt hvis det kun er oddetall!");
+                    ("Oppgave 4: h) Det gaar galt hvis det kun er oddetall!");
             antallFeil++;
         }
 
@@ -301,7 +301,7 @@ public class Oblig1Test {
 
         if (!Arrays.equals(a, b)) {
             System.out.println
-                    ("Oppgave 4: l) Metoden gjør feil for negative verdier!");
+                    ("Oppgave 4: l) Metoden gjor feil for negative verdier!");
             antallFeil++;
         }
 
@@ -460,7 +460,7 @@ public class Oblig1Test {
 
         if (tid > 20) {
             System.out.println("Oppgave 6: i) Metoden "
-                    + "er for ineffektiv. Må forbedres!");
+                    + "er for ineffektiv. Maa forbedres!");
             antallFeil++;
         }
 
@@ -470,7 +470,7 @@ public class Oblig1Test {
 
         if (tid > 20) {
             System.out.println("Oppgave 6: j) Metoden "
-                    + "er for ineffektiv. Må forbedres!");
+                    + "er for ineffektiv. Maa forbedres!");
             antallFeil++;
         }
 
@@ -480,7 +480,7 @@ public class Oblig1Test {
 
         if (tid > 20) {
             System.out.println("Oppgave 6: k) Metoden "
-                    + "er for ineffektiv. Må forbedres!");
+                    + "er for ineffektiv. Maa forbedres!");
             antallFeil++;
         }
 
@@ -490,7 +490,7 @@ public class Oblig1Test {
 
         if (tid > 20) {
             System.out.println("Oppgave 6: l) Metoden "
-                    + "er for ineffektiv. Må forbedres!");
+                    + "er for ineffektiv. Maa forbedres!");
             antallFeil++;
         }
 
@@ -663,7 +663,7 @@ public class Oblig1Test {
 
         if (indeks[0] != 0) {
             System.out.println
-                    ("Opgave 8: e) indeks[0] skal være lik 0!");
+                    ("Opgave 8: e) indeks[0] skal vaere lik 0!");
             antallFeil++;
         }
 
@@ -677,7 +677,7 @@ public class Oblig1Test {
 
             if (!Arrays.equals(a, c)) {
                 System.out.println
-                        ("Oppgave 8: f) Tabellen før kallet:   " + Arrays.toString(a));
+                        ("Oppgave 8: f) Tabellen for kallet:   " + Arrays.toString(a));
                 System.out.println
                         ("              Tabellen etter kallet: " + Arrays.toString(c));
                 System.out.println
@@ -709,7 +709,7 @@ public class Oblig1Test {
 
         if (!Arrays.equals(a, c)) {
             System.out.println
-                    ("Oppgave 8: h) Parametertabellen endres når den er lik");
+                    ("Oppgave 8: h) Parametertabellen endres naar den er lik");
             System.out.println
                     ("            " + Arrays.toString(a));
 
@@ -745,7 +745,7 @@ public class Oblig1Test {
 
         if (!unntak) {
             System.out.println
-                    ("Opgave 9: b) Det skal kastes unntak for tabeller med for få verdier!");
+                    ("Opgave 9: b) Det skal kastes unntak for tabeller med for faa verdier!");
             antallFeil++;
         }
 
@@ -777,8 +777,8 @@ public class Oblig1Test {
 
         if (!Arrays.equals(x, y)) {
             System.out.println
-                    ("Oppgave 9: e) Metoden gjør endringer i tabellen!");
-            System.out.println("Tabellen før: " + Arrays.toString(y));
+                    ("Oppgave 9: e) Metoden gjor endringer i tabellen!");
+            System.out.println("Tabellen for: " + Arrays.toString(y));
             System.out.println("Tabellen etter: " + Arrays.toString(x));
             antallFeil++;
         }
@@ -810,7 +810,7 @@ public class Oblig1Test {
 
         if (tid > 100) {
             System.out.println("Oppgave 9: g) Metoden er ineffektiv! Bruker du");
-            System.out.println("metoden indekssortering på hele tabellen?");
+            System.out.println("metoden indekssortering paa hele tabellen?");
             antallFeil++;
         }
 
@@ -903,14 +903,14 @@ public class Oblig1Test {
             antallFeil++;
         }
 
-        b = Oblig1.inneholdt("ØÅÅØ", "ØØÅØØ");
+        b = Oblig1.inneholdt("oaaaao", "ooaaoo");
         if (b != false) {
             System.out.println
                     ("Oppgave 10: l) Svaret skal bli lik false her!");
             antallFeil++;
         }
 
-        b = Oblig1.inneholdt("ØÅÅØ", "ÅØØÅØ");
+        b = Oblig1.inneholdt("oaaaao", "aaooaao");
         if (b == false) {
             System.out.println
                     ("Oppgave 10: m) Svaret skal bli lik true her!");
@@ -985,7 +985,7 @@ public class Oblig1Test {
         for (int i = 0; i < n; i++)
             a[i] = i + 1;                  // legger inn tallene 1, 2, . , n
 
-        for (int k = n - 1; k > 0; k--)  // løkke som går n - 1 ganger
+        for (int k = n - 1; k > 0; k--)  // loop som gaar n - 1 ganger
         {
             int i = r.nextInt(k + 1);        // en tilfeldig tall fra 0 til k
 

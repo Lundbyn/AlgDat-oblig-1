@@ -3,7 +3,7 @@ import java.util.*;
 public class Oblig1 {
 
     public static void main(String[] args) {
-        System.out.println(inneholdt("ABCB", "1MA2KCBB"));
+
     }
 
     //Oppgave 1)
@@ -22,19 +22,19 @@ public class Oblig1 {
    Det blir faerrest ombyttinger dersom det storste tallet i arrayen er paa siste posisjon (array.length - 1).
 
    - Hvor mange blir det i gjennomsnitt?
-    Ved å bruke ombyttinger-fuksjonen fant jeg at når man bruker et stort tall (big O) gjør den nesten n ombyttinger
+    Ved aa bruke ombyttinger-fuksjonen fant jeg at naar man bruker et stort tall (big O) gjor den nesten n ombyttinger
     Vi kan derfor si at gjennomsnittet er O(n).
 
-    - Kan du på grunnlag av dette si om metoden maks er bedre (eller dårligere) enn de maks-metodene vi har sett på tidligere?
-    Begge har en big O notation på O(n), så de er ca like raske i snitt. Denne maks funskjonen har flere operasjoner inne i
-    if statementet enn de gamle, derfor er denne hakket dårligere enn de andre maks-fuksjonene.
+    - Kan du paa grunnlag av dette si om metoden maks er bedre (eller daarligere) enn de maks-metodene vi har sett paa tidligere?
+    Begge har en big O notation paa O(n), saa de er ca like raske i snitt. Denne maks funskjonen har flere operasjoner inne i
+    if statementet enn de gamle, derfor er denne hakket daarligere enn de andre maks-fuksjonene.
 
     */
 
     //Boblesortering som sender det storste tallet i tabellen til siste posisjon i arrayen.
     public static int maks(int[] a) {
         if(a.length == 0) {
-            throw new NoSuchElementException("Lengden på arrayen kan ikke være 0");
+            throw new NoSuchElementException("Lengden paa arrayen kan ikke vaere 0");
         }
         for (int i = 1; i < a.length; ++i) {
             if(a[i] < a[i-1]) {
@@ -44,7 +44,7 @@ public class Oblig1 {
         return a[a.length-1];
     }
 
-    //Sjekker hvor mange ombyttinger som blir utført
+    //Sjekker hvor mange ombyttinger som blir utfort
     public static int ombyttinger(int[] a) {
         int antOmbyttinger = 0;
         for (int i = 1; i < a.length; ++i) {
@@ -59,11 +59,11 @@ public class Oblig1 {
     //Oppgave 2
     public static int antallUlikeSortert(int[] a) {
         if(a.length == 0) {
-            return 0;       //Returnerer 0 dersom arrayen har lengde på 0.
+            return 0;       //Returnerer 0 dersom arrayen har lengde paa 0.
         }
         for(int i = 1; i < a.length; ++i) {
             if (a[i] < a[i-1]) {
-                throw new IllegalStateException("Arrayet er ikke sortert");    //sjekker at arrayen er sortert i stigende rekkefølge
+                throw new IllegalStateException("Arrayet er ikke sortert");    //sjekker at arrayen er sortert i stigende rekkefolge
             }
         }
         int antUlike = 1;
@@ -76,14 +76,14 @@ public class Oblig1 {
     }
 
     //Oppgave 3
-    public static int antallUlikeUsortert(int[] a) { //Funker også dersom arrayet er sortert
+    public static int antallUlikeUsortert(int[] a) { //Funker ogsaa dersom arrayet er sortert
         int antUlike = 0;
         for(int i = 0; i < a.length; ++i) {
             boolean nyVerdi = true;
             for (int j = 0; j < i; ++j) {
                 if(a[i] == a[j]) {
                     nyVerdi = false;
-                    break;      //Break for å ikke iterere videre dersom man finner en lik verdi.
+                    break;      //Break for aa ikke iterere videre dersom man finner en lik verdi.
                 }
             }
             if(nyVerdi) {
@@ -193,7 +193,7 @@ public class Oblig1 {
         }
     }
 
-    public static int euklids(int a, int k) ///Finner største felles divisor
+    public static int euklids(int a, int k) ///Finner storste felles divisor
     {
         if (k == 0) {
             return a;
@@ -227,7 +227,7 @@ public class Oblig1 {
             return "";
         }
         int max = s[0].length();
-        for(int i = 1; i < s.length; i++) {         //Finner lengden på lengste String
+        for(int i = 1; i < s.length; i++) {         //Finner lengden paa lengste String
             if(s[i].length() > max) {
                 max = s[i].length();
             }
@@ -235,7 +235,7 @@ public class Oblig1 {
 
 
         String flettet = "";
-        for (int i = 0; i < max; i++) {             //itererer gjennom s like mange ganger som lengde på lengste String
+        for (int i = 0; i < max; i++) {             //itererer gjennom s like mange ganger som lengde paa lengste String
             for(int j = 0; j < s.length; j++) {
                 try {
                     flettet += s[j].charAt(i);
@@ -266,7 +266,7 @@ public class Oblig1 {
     //Oppgave 9
     public static int[] tredjeMin(int[] a) {
         if(a.length < 3) {
-            throw new NoSuchElementException("Arrayen må inneholde minst 3 elementer");
+            throw new NoSuchElementException("Arrayen maa inneholde minst 3 elementer");
         }
         int[] startIndekser = indekssortering(kopierArray(a, 3));
 
@@ -410,7 +410,7 @@ public class Oblig1 {
     //Hjelpefunksjoner
 
 
-    //lager en array fra 1 til n i tilfeldig rekkefølge
+    //lager en array fra 1 til n i tilfeldig rekkefolge
     public static int[] randPerm(int n)  // en effektiv versjon
     {
         Random r = new Random();         // en randomgenerator
@@ -418,7 +418,7 @@ public class Oblig1 {
 
         Arrays.setAll(a, i -> i + 1);    // legger inn tallene 1, 2, . , n
 
-        for (int k = n - 1; k > 0; k--)  // løkke som går n - 1 ganger
+        for (int k = n - 1; k > 0; k--)  // loop som gaar n - 1 ganger
         {
             int i = r.nextInt(k+1);        // en tilfeldig tall fra 0 til k
             bytt(a,k,i);                   // bytter om
@@ -427,7 +427,7 @@ public class Oblig1 {
         return a;                        // permutasjonen returneres
     }
 
-    //Bytter plass på 2 integer elementer i et array
+    //Bytter plass paa 2 integer elementer i et array
     public static void bytt(int[] a, int i, int j)
     {
         int temp = a[i];
@@ -443,7 +443,7 @@ public class Oblig1 {
         a[j] = temp;
     }
 
-    //Kopierer n elementer fra et array inn i et nytt array. Starter på indeks 0.
+    //Kopierer n elementer fra et array inn i et nytt array. Starter paa indeks 0.
     public static int[] kopierArray(int[] a, int n) {
         int[] b = new int[n];
         for(int i = 0; i < n; ++i) {
